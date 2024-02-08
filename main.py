@@ -27,7 +27,7 @@ def list_c_files(directory):
 def list_py_files(directory):
     return [file for file in os.listdir(directory) if file.endswith(".py")]
 
-def comileCPP(files):
+def compileCPP(files):
     count=0
     for i in files:
         fileName=i[0:-4]
@@ -58,7 +58,7 @@ def comileCPP(files):
 
         
 
-def comileC(files):
+def compileC(files):
     count=0
     for i in files:
         fileName=i[0:-2]
@@ -86,7 +86,7 @@ def comileC(files):
                 print(f"Output doesn't matches for {i}")
     return count
 
-def comilePy(files):
+def compilePy(files):
     count=0
     for i in files:
         fileName=i[0:-3]
@@ -114,9 +114,9 @@ def printAll():
     print(list_py_files("."))
 
 def compileAll():
-    a=comileCPP(list_cpp_files("."))
-    b=comileC(list_c_files("."))
-    c=comilePy(list_py_files("."))
+    a=compileCPP(list_cpp_files("."))
+    b=compileC(list_c_files("."))
+    c=compilePy(list_py_files("."))
     return a+b+c
 
 
